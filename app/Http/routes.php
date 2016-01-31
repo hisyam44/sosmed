@@ -29,3 +29,15 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::group(['middleware' => 'web'], function () {
+	Route::resource('stats','StatController');
+
+	Route::resource('user','UserController');
+
+	Route::resource('comments','CommentController');
+	
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
