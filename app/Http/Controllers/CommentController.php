@@ -7,8 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Comment;
+
+use Carbon\Carbon;
+
 class CommentController extends Controller
 {
+
+    public function __construct(){
+        $this->middleWare('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +46,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new Comment();
+        $comment->stat_id = $request->input('stat_id');
+        $comment->content = $request->input('content');
+        $comment->published_at = Carbon::now();
+        \Auth::user()->comments()->save($comment);
+        return redirect()->back();
     }
 
     /**

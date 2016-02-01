@@ -7,8 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Stat;
+
+use Carbon\Carbon;
+
 class StatController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,7 +46,11 @@ class StatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $stat = new Stat();
+        $stat->content = $request->input('content');
+        $stat->published_at = Carbon::now();
+        \Auth::user()->stats()->save($stat);
+        return redirect()->back();
     }
 
     /**
@@ -48,7 +61,8 @@ class StatController extends Controller
      */
     public function show($id)
     {
-        //
+        $stat = Stat::find($id);
+        return view('stats.show',compact('stat'));
     }
 
     /**
