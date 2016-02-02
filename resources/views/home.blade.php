@@ -4,16 +4,32 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-                <div class="panel-body">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                <li><a href="#menu1" data-toggle="tab">Menu</a></li>
+                <li><a href="#menu2" data-toggle="tab">Menu</a></li>
+                <li><a href="#menu2" data-toggle="tab">Menu</a></li>
+                <li><a href="#menu2" data-toggle="tab">Menu</a></li>
+            </ul>
+            <div class="panel-body">
                 <div class="panel-body">
                 <div class="">
-                    @include('stats._post')
-    
-                    @foreach($stats as $stat)
-                        @include('stats._stat',['show'=>'false'])
-                    @endforeach
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                    @if(isset($stat))
+                        @include('stats._stat',['show'=>'true'])
+                    @endif
+                    
+                    @if(isset($stats))
+                        @foreach($stats as $stat)
+                            @include('stats._stat',['show'=>'false'])
+                        @endforeach
+                    @endif   
+                    </div>
+                    <div class="tab-pane fade" id="menu1">
+                        @include('stats._post')
+                    </div>
+                    <div class="tab-pane fade" id="menu2"></div>
                 </div>
                 </div>
                 </div>

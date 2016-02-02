@@ -31,17 +31,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {{ Form::label('photo','Photo',['class'=>'col-md-4 control-label']) }}
-                        <div class="col-md-6">
-                            {{ Form::file('photo1',['class'=>'form-control']) }}
-                                @if ($errors->has('photo'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('photo') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
-                    </div>
-                    <div class="form-group">
                         {{ Form::label('password','Password',['class'=>'col-md-4 control-label']) }}
                         <div class="col-md-6">
                             {{ Form::input('password','password',null,['class'=>'form-control']) }}

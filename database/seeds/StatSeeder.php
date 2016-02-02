@@ -18,7 +18,7 @@ class StatSeeder extends Seeder
         $user = new User();
         $user->name = 'hisyam';
         $user->email = 'hisyam@example.com';
-        $user->photo = 'southern_miss_logo.0.0.jpeg';
+        //$user->photo = 'southern_miss_logo.0.0.jpeg';
         $user->password = bcrypt('admin1');
         $user->save();
 

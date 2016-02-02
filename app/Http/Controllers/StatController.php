@@ -62,7 +62,7 @@ class StatController extends Controller
     public function show($id)
     {
         $stat = Stat::find($id);
-        return view('stats.show',compact('stat'));
+        return view('home',compact('stat'));
     }
 
     /**

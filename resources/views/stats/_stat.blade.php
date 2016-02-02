@@ -1,10 +1,5 @@
                     <div class="media">
-                    <hr>
-                    <div class="panel-body">
-                        <a href="{{ url('user/'.$stat->user->id) }}" class="media-left">
-                            <img class="media-object" src="{{ url('images/'.$stat->user->photo) }}" width="64px"></img>
-                        </a>
-                        <div class="media-body">
+                        <div class="media-body panel-body">
                             <h4 class="media-heading">
                             <a href="{{ url('user/'.$stat->user->id) }}">
                                 {{ $stat->user->email }}
@@ -18,5 +13,5 @@
                                 @include('stats._comments') 
                             @endif
                         </div> 
-                    </div>
+    
                     </div>
