@@ -1,13 +1,12 @@
                                 @foreach($stat->comments as $comment)
                                 <div class="media pull-right center-block">
                                     <div class="media-body">
-                                        <p>
-                                    
-                                        <a href="{{ url('user/'.$comment->user->id) }}">
+                                        <h4>
+                                        <a href="{{ url('user/'.$comment->user->id) }}" class="label label-default">
                                             {{ $comment->user->email }}
                                         </a>
-                                        
-                                        {{ $comment->content }}</p>
+                                        &nbsp;{{ $comment->content }}
+                                        </h4>
                                         <span class="text-info">{{ $comment->published_at->diffForHumans() }}</span>
                                     </div>
                                 </div>

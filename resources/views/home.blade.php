@@ -3,12 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-7 col-md-offset-2">
             <ul class="nav nav-tabs nav-justified">
-                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                <li><a href="#menu1" data-toggle="tab">Menu</a></li>
-                <li><a href="#menu2" data-toggle="tab">Menu</a></li>
-                <li><a href="#menu2" data-toggle="tab">Menu</a></li>
+                <li class="active"><a href="#home" data-toggle="tab">Secrets</a></li>
+                <li><a href="#menu1" data-toggle="tab">Share</a></li>
                 <li><a href="#menu2" data-toggle="tab">Menu</a></li>
             </ul>
             <div class="panel-body">

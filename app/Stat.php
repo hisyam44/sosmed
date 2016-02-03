@@ -19,4 +19,8 @@ class Stat extends Model
     public function comments(){
     	return $this->hasMany('App\Comment');
     }
+
+    public function like(){
+    	return $this->hasOne('App\Like');
+    }
 }

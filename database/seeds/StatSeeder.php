@@ -5,6 +5,8 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Stat;
 use App\Comment;
+use App\Like;
+
 
 class StatSeeder extends Seeder
 {
@@ -24,6 +26,7 @@ class StatSeeder extends Seeder
 
         $stat = Stat::create(['user_id'=>'1','content'=>'Lorem Ipsum','published_at'=>Carbon\Carbon::now()]);
 
+        $like = Like::create(['stat_id'=>'1','count'=>45]);
      
         $comment = Comment::create(['stat_id'=>1,'user_id'=>1,'content'=>'Lorem Ipsum','published_at'=>Carbon\Carbon::now()]);
     }
